@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Panel — Campus Lost &amp; Found</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="board-header">
+  <div class="brand">
+    <span class="pin-dot"></span>
+    <h1>The Notice Board</h1>
+    <span class="tag">Admin Control</span>
+  </div>
+  <nav class="board-nav" id="board-nav"></nav>
+</header>
+
+<main class="container">
+  <h2 class="page-title">Admin Panel</h2>
+  <p class="page-sub">Moderate reports, manage users, review activity</p>
+
+  <div class="stat-grid" id="stat-grid"></div>
+
+  <div class="tab-strip">
+    <button class="active" data-tab="pending">Pending Approval</button>
+    <button data-tab="all-items">All Listings</button>
+    <button data-tab="users">Users</button>
+  </div>
+
+  <div id="tab-pending">
+    <div id="pending-grid" class="grid"></div>
+  </div>
+
+  <div id="tab-all-items" class="hidden">
+    <table class="data-table" id="all-items-table">
+      <thead>
+        <tr><th>Title</th><th>Type</th><th>Status</th><th>Reporter</th><th>Approval</th><th>Actions</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="tab-users" class="hidden">
+    <table class="data-table" id="users-table">
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="board-footer">Pinned with care — Campus Lost &amp; Found Portal</footer>
+
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

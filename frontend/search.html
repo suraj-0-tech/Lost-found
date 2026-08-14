@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Browse Items — Campus Lost &amp; Found</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="board-header">
+  <div class="brand">
+    <span class="pin-dot"></span>
+    <h1>The Notice Board</h1>
+    <span class="tag">Campus Lost &amp; Found</span>
+  </div>
+  <nav class="board-nav" id="board-nav"></nav>
+</header>
+
+<main class="container">
+  <h2 class="page-title">Browse the Board</h2>
+  <p class="page-sub">Search lost &amp; found reports pinned by your campus community</p>
+
+  <form class="toolbar" id="filter-form">
+    <div class="field">
+      <label for="f-keyword">Keyword</label>
+      <input type="text" id="f-keyword" placeholder="e.g. blue backpack" />
+    </div>
+    <div class="field">
+      <label for="f-status">Type</label>
+      <select id="f-status">
+        <option value="">Lost or Found</option>
+        <option value="Lost">Lost</option>
+        <option value="Found">Found</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="f-category">Category</label>
+      <select id="f-category">
+        <option value="">Any Category</option>
+        <option>Electronics</option>
+        <option>Documents</option>
+        <option>Accessories</option>
+        <option>Bags</option>
+        <option>Clothing</option>
+        <option>Keys</option>
+        <option>Books</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="f-location">Location</label>
+      <input type="text" id="f-location" placeholder="e.g. Library" />
+    </div>
+    <div class="field">
+      <label for="f-date">Date</label>
+      <input type="date" id="f-date" />
+    </div>
+    <button type="submit" class="btn btn-gold">Search</button>
+    <button type="button" id="clear-filters" class="btn btn-outline">Clear</button>
+  </form>
+
+  <div id="results-info" class="page-sub"></div>
+  <div id="item-grid" class="grid"></div>
+</main>
+
+<!-- Claim modal -->
+<div class="modal-backdrop hidden" id="claim-modal">
+  <div class="modal">
+    <h3>Contact / Claim This Item</h3>
+    <div id="claim-error" class="error-msg"></div>
+    <div id="claim-success" class="success-msg"></div>
+    <p id="claim-item-title" style="font-weight:600;"></p>
+    <p style="font-size:0.85rem; color:var(--ink-soft);" id="claim-owner-contact"></p>
+    <form id="claim-form">
+      <div class="field">
+        <label for="claim-message">Message to reporter</label>
+        <textarea id="claim-message" placeholder="Describe how you can identify this item, or how you found it..." required></textarea>
+      </div>
+      <div style="display:flex; gap:0.6rem; justify-content:flex-end;">
+        <button type="button" class="btn btn-outline" id="claim-cancel">Cancel</button>
+        <button type="submit" class="btn btn-primary">Send Claim</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="board-footer">Pinned with care — Campus Lost &amp; Found Portal</footer>
+
+<script src="js/api.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

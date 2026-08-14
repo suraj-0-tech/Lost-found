@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Reports — Campus Lost &amp; Found</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="board-header">
+  <div class="brand">
+    <span class="pin-dot"></span>
+    <h1>The Notice Board</h1>
+    <span class="tag">Campus Lost &amp; Found</span>
+  </div>
+  <nav class="board-nav" id="board-nav"></nav>
+</header>
+
+<main class="container">
+  <div class="section-block">
+    <h2>Post a New Notice</h2>
+    <div class="card no-pin">
+      <div id="report-error" class="error-msg"></div>
+      <div id="report-success" class="success-msg"></div>
+      <form id="report-form">
+        <div class="field-row">
+          <div class="field">
+            <label for="r-status">This item was...</label>
+            <select id="r-status" required>
+              <option value="Lost">Lost — I lost something</option>
+              <option value="Found">Found — I found something</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-category">Category</label>
+            <select id="r-category" required>
+              <option>Electronics</option>
+              <option>Documents</option>
+              <option>Accessories</option>
+              <option>Bags</option>
+              <option>Clothing</option>
+              <option>Keys</option>
+              <option>Books</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-title">Title</label>
+          <input type="text" id="r-title" required placeholder="e.g. Black North Face backpack" />
+        </div>
+        <div class="field">
+          <label for="r-description">Description</label>
+          <textarea id="r-description" required placeholder="Color, brand, distinguishing marks, contents..."></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-location">Location</label>
+            <input type="text" id="r-location" required placeholder="e.g. Main Library, 2nd floor" />
+          </div>
+          <div class="field">
+            <label for="r-date">Date</label>
+            <input type="date" id="r-date" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-image">Photo (optional)</label>
+          <input type="file" id="r-image" accept="image/png, image/jpeg, image/webp" />
+        </div>
+        <button type="submit" class="btn btn-primary">Pin to Board</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>My Reports</h2>
+    <div id="results-info" class="page-sub"></div>
+    <div id="my-item-grid" class="grid"></div>
+  </div>
+
+  <div class="section-block">
+    <h2>Claims on My Items</h2>
+    <div id="claims-container"></div>
+  </div>
+</main>
+
+<footer class="board-footer">Pinned with care — Campus Lost &amp; Found Portal</footer>
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

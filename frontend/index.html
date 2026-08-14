@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Campus Lost &amp; Found — Sign in</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="board-header">
+  <div class="brand">
+    <span class="pin-dot"></span>
+    <h1>The Notice Board</h1>
+    <span class="tag">Campus Lost &amp; Found</span>
+  </div>
+  <nav class="board-nav" id="board-nav"></nav>
+</header>
+
+<main class="container">
+  <div class="auth-shell">
+    <div class="auth-tabs">
+      <button id="tab-login" class="active">Log In</button>
+      <button id="tab-register">Register</button>
+    </div>
+
+    <div class="card">
+      <div id="error-box" class="error-msg"></div>
+      <div id="success-box" class="success-msg"></div>
+
+      <!-- LOGIN FORM -->
+      <form id="login-form">
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" required placeholder="you@campus.edu" />
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required placeholder="••••••••" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="register-form" class="hidden">
+        <div class="field">
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" required placeholder="Jordan Rivera" />
+        </div>
+        <div class="field">
+          <label for="reg-email">Email</label>
+          <input type="email" id="reg-email" required placeholder="you@campus.edu" />
+        </div>
+        <div class="field">
+          <label for="reg-phone">Phone (optional)</label>
+          <input type="tel" id="reg-phone" placeholder="555-0100" />
+        </div>
+        <div class="field">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" required minlength="6" placeholder="At least 6 characters" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="board-footer">Pinned with care — Campus Lost &amp; Found Portal</footer>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
