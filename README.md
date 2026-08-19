@@ -97,6 +97,17 @@ The API base URL is set at the top of `frontend/js/api.js`
 (`const API_BASE = "http://localhost:5000/api"`) — change it if your backend
 runs elsewhere (e.g. a deployed URL).
 
+### GitHub Pages
+
+GitHub Pages serves the repository root, so the root `index.html` redirects to
+the static frontend entry point at `frontend/index.html`. In repository
+settings, use **Deploy from a branch**, select the `main` branch, and select
+`/(root)` as the folder.
+
+GitHub Pages cannot run the Node.js backend or MongoDB. Deploy the backend to a
+separate service, then update `API_BASE` and `imageUrl` in
+`frontend/js/api.js` to use that backend's public HTTPS URL before deploying.
+
 ---
 
 ## 4. Using the app
